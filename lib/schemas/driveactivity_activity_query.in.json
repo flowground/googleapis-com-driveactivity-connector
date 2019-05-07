@@ -1,0 +1,92 @@
+{
+    "type": "object",
+    "properties": {
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The request message for querying Drive activity.",
+            "properties": {
+                "ancestorName": {
+                    "description": "Return activities for this Drive folder and all children and descendants.\nThe format is \"items/ITEM_ID\".",
+                    "type": "string"
+                },
+                "consolidationStrategy": {
+                    "description": "Details on how to consolidate related actions that make up the activity. If\nnot set, then related actions will not be consolidated.",
+                    "properties": {
+                        "legacy": {
+                            "description": "The individual activities are consolidated using the legacy strategy.",
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "none": {
+                            "description": "The individual activities are not consolidated.",
+                            "properties": {},
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "filter": {
+                    "description": "The filtering for items returned from this query request. The format of the\nfilter string is a sequence of expressions, joined by an optional \"AND\",\nwhere each expression is of the form \"field operator value\".\n\nSupported fields:\n\n  - <tt>time</tt>: Uses numerical operators on date values either in\n    terms of milliseconds since Jan 1, 1970 or in RFC 3339 format.\n    Examples:\n      - <tt>time > 1452409200000 AND time <= 1492812924310</tt>\n      - <tt>time >= \"2016-01-10T01:02:03-05:00\"</tt>\n\n  - <tt>detail.action_detail_case</tt>: Uses the \"has\" operator (:) and\n    either a singular value or a list of allowed action types enclosed in\n    parentheses.\n    Examples:\n      - <tt>detail.action_detail_case: RENAME</tt>\n      - <tt>detail.action_detail_case:(CREATE UPLOAD)</tt>\n      - <tt>-detail.action_detail_case:MOVE</tt>",
+                    "type": "string"
+                },
+                "itemName": {
+                    "description": "Return activities for this Drive item. The format is\n\"items/ITEM_ID\".",
+                    "type": "string"
+                },
+                "pageSize": {
+                    "description": "The requested number of activity to return. If not set, a default value\nwill be used.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "pageToken": {
+                    "description": "The next_page_token value returned from a previous QueryDriveActivity\nrequest, if any.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "__xgafv": {
+            "type": "string",
+            "enum": [
+                "1",
+                "2"
+            ]
+        }
+    }
+}
