@@ -1,5 +1,5 @@
 {
-    "title": "Drive Activity",
+    "title": "Drive Activity (driveactivity)",
     "description": "Provides a historical view of activity in Google Drive.",
     "docsUrl": "https://developers.google.com/drive/activity/",
     "url": "https://api.apis.guru/v2/specs/googleapis.com/driveactivity/v2/swagger.json",
